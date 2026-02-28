@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-bg-primary: #1c1816;
+  --color-bg-secondary: #2a2422;
+  --color-bg-dark: #120f0e;
+  --color-text-primary: #ffffff;
+  --color-text-inverse: #1c1816;
+  --color-accent-white: #ffffff;
+  --color-accent-blue: #7bb5e3;
+
+  --font-primary: 'Outfit', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+
+  @keyframes marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+  }
+}
+
+@layer base {
+
+  body {
+    @apply font-primary bg-bg-primary text-text-primary leading-relaxed overflow-x-hidden antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight mb-4;
+  }
+
+  h1 {
+    @apply leading-none tracking-tighter;
+    font-size: clamp(3rem, 8vw, 7.5rem);
+  }
+
+  h2 {
+    @apply leading-none;
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+
+  p {
+    @apply font-secondary text-base font-normal mb-8 opacity-90;
+    max-width: 60ch;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-[1440px] mx-auto px-8;
+  }
+
+  .full-height {
+    @apply min-h-screen flex flex-col;
+  }
+
+  section {
+    @apply py-32;
+  }
+}
